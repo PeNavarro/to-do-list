@@ -3,12 +3,6 @@ import { TasksBox } from './components/TasksBox'
 import { TaskInput } from './components/TaskInput'
 import { useState } from 'react'
 
-interface Task{
-  id: string,
-  toDo: string,
-  isDone: boolean
-}
-
 function App() {
   const [newToDo, setNewToDo] = useState('')
 
