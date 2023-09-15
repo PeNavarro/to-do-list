@@ -6,7 +6,10 @@ export default {
   ],
   theme: {
     container: {
-      padding: '10rem'
+      padding: {
+        DEFAULT: '1rem',
+        md: '10rem'
+      }
     },
     extend: {
       colors: {

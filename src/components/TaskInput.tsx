@@ -25,7 +25,7 @@ export function TaskInput({onCreateTask}: CreateTask){
       }
 
       return (
-            <form method='post' onSubmit={handleCreateTask} className='flex justify-center gap-2 w-full'>
+            <form method='post' onSubmit={handleCreateTask} className='flex flex-wrap justify-center gap-2 w-full'>
                   <input 
                         type="text" 
                         name="taskInput" 
@@ -39,7 +39,7 @@ export function TaskInput({onCreateTask}: CreateTask){
                   />
                   <button 
                         type="submit" 
-                        className='bg-blueDark text-grey100 text-sm font-bold flex items-center gap-2 p-4 rounded-lg'
+                        className='bg-blueDark text-grey100 text-sm font-bold flex max-md:flex-grow justify-center items-center gap-2 p-4 rounded-lg'
                   >
                         Criar
                         <img src={addIcon} alt="Icone adicionar" />

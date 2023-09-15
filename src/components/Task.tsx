@@ -23,7 +23,7 @@ export function Task({id, toDo, isDone, onCompleteTask, onDeleteTask}: Tasks){
       return(
             <div className="bg-grey500 p-4 flex gap-3 w-full">
                   <button 
-                        className={`${isDone ? 'bg-blue' : ''} w-5 h-5 rounded-full border-blue border-[3px]`}
+                        className={`${isDone ? 'bg-blue' : ''} w-5 h-5 rounded-full border-blue border-[3px] shrink-0`}
                         onClick={handleCompleteTask}
                   >   
                         <img src={checkIcon} alt="Concluído" className={`hidden ${isDone ? '!block' : ''} mx-auto`} />
@@ -35,7 +35,7 @@ export function Task({id, toDo, isDone, onCompleteTask, onDeleteTask}: Tasks){
                   :
                         <p className="text-grey100 text-sm flex-grow">{toDo}</p>
                   }
-                  <button onClick={handleDeleteTask}>
+                  <button onClick={handleDeleteTask} className='shrink-0'>
                         <img src={trashIcon} alt="Excluir" />
                   </button>
             </div>

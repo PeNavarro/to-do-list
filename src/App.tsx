@@ -14,7 +14,7 @@ function App() {
     <div>
       <Header />
       <div className="container mx-auto relative">
-        <div className="w-full absolute -translate-y-1/2 top-0 left-0 right-0 px-40">
+        <div className="w-full px-4 absolute -translate-y-1/2 top-0 left-0 right-0 md:px-40">
           <TaskInput onCreateTask={handleCreateTask} />
         </div>
         <TasksBox onCreateTask={newToDo}/>
