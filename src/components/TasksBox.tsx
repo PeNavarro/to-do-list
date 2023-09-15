@@ -11,12 +11,11 @@ interface Task{
 }
 
 interface Tasks{
-      tasks: Task[],
       onCreateTask: string
 }
 
-export function TasksBox({tasks, onCreateTask}: Tasks){
-      const [newTaskList, setNewTaskList] = useState<Task[]>(tasks)
+export function TasksBox({onCreateTask}: Tasks){
+      const [newTaskList, setNewTaskList] = useState<Task[]>([])
 
       useEffect(() => {
             if(onCreateTask != ''){
