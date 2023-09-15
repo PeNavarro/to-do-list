@@ -1,16 +1,32 @@
 import trashIcon from '../assets/trashIcon.svg'
+import checkIcon from '../assets/checkIcon.svg'
 
 interface Tasks{
+      id: string,
       toDo: string,
-      isDone: boolean
+      isDone: boolean,
+      onCompleteTask: (taskId: string) => void
+      onDeleteTask: (taskId: string) => void
 }
 
-export function Task({toDo, isDone}: Tasks){
+
+
+export function Task({id, toDo, isDone, onCompleteTask, onDeleteTask}: Tasks){
+      function handleCompleteTask(){
+            onCompleteTask(id)
+      }
+
+      function handleDeleteTask(){
+            onDeleteTask(id)
+      }
+
       return(
             <div className="bg-grey500 p-4 flex gap-3 w-full">
                   <button 
-                        className="w-5 h-5 rounded-full border-blue border-[3px]"
+                        className={`${isDone ? 'bg-blue' : ''} w-5 h-5 rounded-full border-blue border-[3px]`}
+                        onClick={handleCompleteTask}
                   >   
+                        <img src={checkIcon} alt="Concluído" className={`hidden ${isDone ? '!block' : ''} mx-auto`} />
                   </button>
                   {isDone ? 
                         <del className="text-grey300 flex-grow">
@@ -19,7 +35,7 @@ export function Task({toDo, isDone}: Tasks){
                   :
                         <p className="text-grey100 text-sm flex-grow">{toDo}</p>
                   }
-                  <button>
+                  <button onClick={handleDeleteTask}>
                         <img src={trashIcon} alt="Excluir" />
                   </button>
             </div>
